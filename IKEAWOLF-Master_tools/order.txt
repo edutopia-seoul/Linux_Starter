@@ -1,0 +1,75 @@
+sudo apt update -y
+sudo apt upgrade -y
+
+
+
+sudo apt install nodejs npm
+node -v
+npm -v
+sudo npm install -g @openai/codex
+sudo npm install -g @google/gemini-cli
+
+
+
+
+
+
+
+
+sudo apt install openssh-server -y
+
+sudo systemctl enable ssh
+sudo systemctl start ssh
+
+
+sudo systemctl status ssh
+
+
+
+sudo ufw allow ssh
+sudo ufw enable
+ip a
+
+
+
+
+
+
+
+
+qemu
+
+sudo apt update
+sudo apt install qemu-guest-agent -y
+sudo systemctl enable --now qemu-guest-agent
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+proxmox 비지니스 제거
+grep -R "enterprise.proxmox.com" /etc/apt/sources.list /etc/apt/sources.list.d/
+
+mv /etc/apt/sources.list.d/pve-enterprise.sources /etc/apt/sources.list.d/pve-enterprise.sources.disabled 2>/dev/null
+mv /etc/apt/sources.list.d/ceph.sources /etc/apt/sources.list.d/ceph.sources.disabled 2>/dev/null
+
+echo "deb http://download.proxmox.com/debian/pve trixie pve-no-subscription" > /etc/apt/sources.list.d/pve-no-subscription.list
+echo "deb http://download.proxmox.com/debian/ceph-squid trixie no-subscription" > /etc/apt/sources.list.d/ceph-no-subscription.list
+
+apt update
+apt dist-upgrade -y
